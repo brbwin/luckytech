@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden
+}
+
+// @font-face {
+//   font-family: 'Wood Hell Company';
+//   src: url('../font/WoodHellCompany.eot');
+//   src: url('../font/WoodHellCompany.eot?#iefix') format('embedded-opentype'),
+//       url('../font/WoodHellCompany.woff2') format('woff2'),
+//       url('../font/WoodHellCompany.woff') format('woff'),
+//       url('../font/WoodHellCompany.ttf') format('truetype'),
+//       url('../font/WoodHellCompany.svg#WoodHellCompany') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+//   font-display: swap;
+// }
+
+
+@font-face {
+  font-family: 'Chalkboard SE';
+  src: url('../font/ChalkboardSE-Light.eot');
+  src: local('../font/Chalkboard SE Light'), local('ChalkboardSE-Light'),
+      url('../font/ChalkboardSE-Light.eot?#iefix') format('embedded-opentype'),
+      url('../font/ChalkboardSE-Light.woff2') format('woff2'),
+      url('../font/ChalkboardSE-Light.woff') format('woff'),
+      url('../font/ChalkboardSE-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalkboard SE';
+  src: url('../font/ChalkboardSE-Regular.eot');
+  src: local('../font/Chalkboard SE Regular'), local('ChalkboardSE-Regular'),
+      url('../font/ChalkboardSE-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../font/ChalkboardSE-Regular.woff2') format('woff2'),
+      url('../font/ChalkboardSE-Regular.woff') format('woff'),
+      url('../font/ChalkboardSE-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chalkboard SE';
+  src: url('../font/ChalkboardSE-Bold.eot');
+  src: local('../font/Chalkboard SE Bold'), local('ChalkboardSE-Bold'),
+      url('../font/ChalkboardSE-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../font/ChalkboardSE-Bold.woff2') format('woff2'),
+      url('../font/ChalkboardSE-Bold.woff') format('woff'),
+      url('../font/ChalkboardSE-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+  font-weight: 300;
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ffd83b;
+  }
+}
+
+body {
+  font-family: 'Gayathri', sans-serif;
+}
+
+body,
+.loader-container {
+  background: #024472;
+  background-image: url("/images/BG_loading.webp");
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  font-weight: 300;
+  overflow-x: hidden;
+  @media (max-width: 767px)  {
+    background-image: url("/images/bg-mobile.webp");
+  }
+}
+
+
+.loader-container {
+  position: fixed;
+  z-index: 99999999;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    animation: loading 2s infinite;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "CopperplateGothic";
+    font-size: 4rem;
+    animation: loading 1s infinite alternate;
+
+    @media (max-width: 767px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  span {
+   color: #EF9400;
+   text-align: center;
+   font-family: "CopperplateGothic";
+  }
+}
+
+
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

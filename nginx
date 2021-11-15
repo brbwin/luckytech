@@ -1,0 +1,48 @@
+
+server {
+    listen 80;
+
+    server_name demo.diviner.finance;
+
+    return 301 https://$host$request_uri;
+}
+server {
+  listen 80 ;
+
+  server_name demo.diviner.finance www.demo.diviner.finance;
+
+
+
+  location /static {
+    proxy_cache STATIC;
+    proxy_ignore_headers Cache-Control;
+    proxy_cache_valid 60m;
+    proxy_pass http://66.42.55.233:3000;
+
+  }
+
+  location / {
+    proxy_pass http://66.42.55.233:3000;
+  }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/demo.diviner.finance/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/demo.diviner.finance/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+
+
+rm /etc/nginx/sites-enabled/demo.diviner.finance.conf
+rm /etc/nginx/sites-available/demo.diviner.finance.conf
+
+nano /etc/nginx/sites-available/demo.diviner.finance.conf
+
+sudo ln -s /etc/nginx/sites-available/demo.diviner.finance.conf /etc/nginx/sites-enabled/demo.diviner.finance.conf
+
+
+sudo /etc/init.d/nginx restart
+
+
+pm2 start npm --name "landing-dev" -- run "start:dev"
