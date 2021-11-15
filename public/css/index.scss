@@ -30,38 +30,17 @@ html, body {
 
 
 @font-face {
-  font-family: 'Chalkboard SE';
-  src: url('../font/ChalkboardSE-Light.eot');
-  src: local('../font/Chalkboard SE Light'), local('ChalkboardSE-Light'),
-      url('../font/ChalkboardSE-Light.eot?#iefix') format('embedded-opentype'),
-      url('../font/ChalkboardSE-Light.woff2') format('woff2'),
-      url('../font/ChalkboardSE-Light.woff') format('woff'),
-      url('../font/ChalkboardSE-Light.ttf') format('truetype');
+  font-family: 'Mont';
+  src: 
+      url('../font/Mont/Mont-Thin.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
-
 @font-face {
-  font-family: 'Chalkboard SE';
-  src: url('../font/ChalkboardSE-Regular.eot');
-  src: local('../font/Chalkboard SE Regular'), local('ChalkboardSE-Regular'),
-      url('../font/ChalkboardSE-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../font/ChalkboardSE-Regular.woff2') format('woff2'),
-      url('../font/ChalkboardSE-Regular.woff') format('woff'),
-      url('../font/ChalkboardSE-Regular.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Chalkboard SE';
-  src: url('../font/ChalkboardSE-Bold.eot');
-  src: local('../font/Chalkboard SE Bold'), local('ChalkboardSE-Bold'),
-      url('../font/ChalkboardSE-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../font/ChalkboardSE-Bold.woff2') format('woff2'),
-      url('../font/ChalkboardSE-Bold.woff') format('woff'),
-      url('../font/ChalkboardSE-Bold.ttf') format('truetype');
-  font-weight: bold;
+  font-family: 'Mont-Bold';
+  src: 
+      url('../font/Mont/Mont-Bold.ttf') format('truetype');
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -86,13 +65,13 @@ html, body {
 }
 
 body {
-  font-family: 'Gayathri', sans-serif;
+  font-family: 'Mont', sans-serif;
 }
 
 body,
 .loader-container {
   background: #024472;
-  background-image: url("/images/BG_loading.webp");
+  background-image: url("/images/luckytech/bg.png");
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
@@ -100,7 +79,7 @@ body,
   font-weight: 300;
   overflow-x: hidden;
   @media (max-width: 767px)  {
-    background-image: url("/images/bg-mobile.webp");
+    background-image: url("/images/luckytech/bg.png");
   }
 }
 
@@ -136,7 +115,7 @@ h6 {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
-    font-family: "CopperplateGothic";
+    font-family: "Mont";
     font-size: 4rem;
     animation: loading 1s infinite alternate;
 

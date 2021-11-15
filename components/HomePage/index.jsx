@@ -16,6 +16,7 @@ import Roadmap from "./Components/Roadmap";
 import Partners from "./Components/Partners";
 import OurTeam from "./Components/OurTeam";
 import Features from "./Components/Features";
+import Luckytech from "./Components/Luckytech";
 import Slider from "react-slick";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -36,133 +37,7 @@ const Menu = [
 ];
 
 export default function Index() {
-  // const [isTime, setTime] = useState(true)
-  const sliderRef = useRef();
-  const totalScrollRef = useRef(0);
-  const totalScrollTimeout = useRef();
-  const { closePopup } = useContext(PopupContext);
-
-  let ticks = 0;
-
-  useEffect(() => {
-    AOS.init({
-      startEvent: "load",
-      once: false,
-      disable: "mobile",
-      initClassName: "aos-init",
-      animatedClassName: "aos-animate",
-      useClassNames: false,
-      easing: "ease-out",
-      offset: 120,
-      anchorPlacement: "top-bottom",
-    });
-
-    //Simulate event resize for activate animation on Safari
-    window.dispatchEvent(new Event("resize"));
-  }, []);
-
-  useEffect(() => {
-    document.querySelectorAll("#menuMobile li")[0].classList.add("active");
-    const onScroll = debounce(
-      (scrollValue) => {
-        closePopup();
-        if (scrollValue < 0) {
-          sliderRef.current.slickPrev();
-        } else {
-          sliderRef.current.slickNext();
-        }
-      },
-      500,
-      {
-        leading: true,
-        trailing: false,
-        maxWait: 500,
-      }
-    );
-
-    const mouseWheelHandler = (e) => {
-      if (Math.abs(e.deltaY) < 40) return; // if deltaY < 40 this is prediction scroll on touch pad => ignore it
-
-      totalScrollRef.current = totalScrollRef.current + e.deltaY;
-      clearTimeout(totalScrollTimeout.current);
-      totalScrollTimeout.current = setTimeout(() => {
-        totalScrollRef.current = 0;
-      }, 50); //reset to 0 after 50ms not doing scroll action
-
-      if (Math.abs(totalScrollRef.current) > 150) {
-        onScroll(totalScrollRef.current);
-        totalScrollRef.current = 0;
-      }
-    };
-    if (screen.width > 768) {
-      window.addEventListener("mousewheel", mouseWheelHandler);
-
-      return () => {
-        window.removeEventListener("mousewheel", mouseWheelHandler);
-      };
-      // window.addEventListener("DOMMouseScroll", mouseWheelHandler);
-
-      // window.removeEventListener("DOMMouseScroll", mouseWheelHandler);
-    }
-  }, []);
-
-  const settings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    vertical: true,
-    verticalSwiping: true,
-    infinite: false,
-    adaptiveHeight: true,
-    swipeToSlide: true,
-
-    customPaging: function (i) {
-      return <BoxMenu>{Menu[i]}</BoxMenu>;
-    },
-    beforeChange: (prev, next) => {
-      //Attach animated class for Prev element
-      const prevSlideElements =
-        sliderRef.current.innerSlider.list.querySelectorAll(
-          `[data-index="${prev}"] .aos-init`
-        );
-      prevSlideElements.forEach((el) => el.classList.remove("aos-animate"));
-
-      //Attach animated class for Next element
-      const nextSlideElements =
-        sliderRef.current.innerSlider.list.querySelectorAll(
-          `[data-index="${next}"] .aos-init`
-        );
-      nextSlideElements.forEach((el) => el.classList.add("aos-animate"));
-
-      // console.log("before",prev, next)
-      document
-        .querySelectorAll("#menuMobile li")
-        [prev].classList.remove("active");
-      document.querySelectorAll("#menuMobile li")[next].classList.add("active");
-      window.addEventListener(
-        "mousewheel",
-        function (e) {
-          e.preventDefault();
-        },
-        { passive: false }
-      );
-    },
-    afterChange: (e) => {
-      // console.log("after",e)
-      // document.querySelectorAll("#menuMobile li")[e].classList.add("active")
-      setTimeout(
-        window.addEventListener(
-          "mousewheel",
-          function (e) {
-            e.preventDefault();
-          },
-          { passive: true }
-        ),
-        300
-      );
-    },
-  };
+ 
 
 const BoxMenu = styled.a`
   font-family: ${(props) => props.theme.fontPrimary};
@@ -340,7 +215,8 @@ function gotoSlide(n) {
 
 return (
     <>
-      <Header gotoSlide={gotoSlide} />
+    <Luckytech/>
+      {/* <Header gotoSlide={gotoSlide} />
       <CustomSlider {...settings} ref={sliderRef}>
         <Home />
         <Introduction />
@@ -352,7 +228,7 @@ return (
         <Roadmap />
         <Partners />
         <OurTeam/>
-       </CustomSlider>
+       </CustomSlider> */}
     </>
   );
 }

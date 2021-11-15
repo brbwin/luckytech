@@ -101,7 +101,7 @@ const LoadingFullScreen = () => {
   return (
     <div className="loader-container">
       <div className="loading">
-        <img src="/images/loading.webp" />
+        <img src="/images/luckytech/logo.png" />
       </div>
     </div>
   );

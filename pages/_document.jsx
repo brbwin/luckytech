@@ -36,14 +36,14 @@ export default class extends Document {
     return (
       <Html>
         <Head>
-          <meta property="og:title" content="Diviner protocol" />
+          <meta property="og:title" content="Luckytech" />
           <meta
             name="og:description"
-            content="Enjoy lossless prediction, play games freely, earn high returns,  Welcome to the next generation of prediction and GameFi."
+            content="We are your business partner, not just a blockchain development outsourcing firm. We focus on your business objectives and deal primarily with your business goals, not just with your TOR."
           />
           <meta
             name="keywords"
-            content="Prediction market, Free to play, play to earn. GameFi, swap, stake, yield, NFTs."
+            content="Software, Development, BLOCKCHAIN, ECOSYSTEMS"
           />
 
           <meta
@@ -59,9 +59,10 @@ export default class extends Document {
             href="https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&display=swap"
             rel="stylesheet"
           />
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap" rel="stylesheet" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-          <link rel="shortcut icon" type="image/png" href="./images/logo.ico" />
+          <link rel="shortcut icon" type="image/png" href="./images/luckytech/favicon.png" />
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
