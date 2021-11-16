@@ -83,7 +83,7 @@ function MyApp(this: any, { Component, pageProps }: AppProps) {
   return (
     <Theme>
       <PopupProvider>
-        {isLoading && <LoadingFullScreen />}
+        {/* {isLoading && <LoadingFullScreen />} */}
         <Component {...pageProps} />
         <Footer />
 

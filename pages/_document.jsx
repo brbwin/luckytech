@@ -36,7 +36,7 @@ export default class extends Document {
     return (
       <Html>
         <Head>
-          <meta property="og:title" content="Luckytech" />
+          <meta property="og:title" content="LuckyTech | Outsource Blockchain Development Services" />
           <meta
             name="og:description"
             content="We are your business partner, not just a blockchain development outsourcing firm. We focus on your business objectives and deal primarily with your business goals, not just with your TOR."
@@ -50,7 +50,7 @@ export default class extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <title>Diviner Protocol</title>
+          <title>LuckyTech | Outsource Blockchain Development Services</title>
           <link
             rel="stylesheet"
             href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
