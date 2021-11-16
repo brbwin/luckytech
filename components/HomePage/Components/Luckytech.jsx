@@ -21,7 +21,7 @@ export default function Luckytech() {
           Please come back later
           </Please>
           <Thankyou>
-            Thankyou
+            Thank you
           </Thankyou>
       </Main>
     </Introduction>
